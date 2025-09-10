@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ProKS1.ViewModels"
+        x:Class="ProKS1.Views.GlobalTableWindow"
+        x:DataType="vm:GlobalTableViewModel"
+        x:CompileBindings="False"
+        Title="Wypożyczenia (z filtrami)"
+        Width="1200" Height="780"
+        WindowStartupLocation="CenterOwner">
+
+	<Grid RowDefinitions="Auto,Auto,*" Margin="12">
+
+	
+		<Border Grid.Row="0" Background="#202020" CornerRadius="6" Padding="8" Margin="0,0,0,8">
+			<StackPanel Orientation="Horizontal" Spacing="16">
+				<TextBlock Text="{Binding AllCount, StringFormat='Załadowano: {0}'}"/>
+				<TextBlock Text="{Binding FilteredCount, StringFormat='Widoczne: {0}'}"/>
+				<TextBlock Text="{Binding LoansPath, StringFormat='loans.json: {0}'}"/>
+			</StackPanel>
+		</Border>
+
+		<WrapPanel Grid.Row="1" ItemWidth="280" ItemHeight="64" Margin="0,0,0,8">
+			<StackPanel Width="280">
+				<TextBlock Text="Książka (tytuł)"/>
+				<TextBox Text="{Binding BookTitleFilter}" Watermark="np. Pan Tadeusz"/>
+			</StackPanel>
+
+			<StackPanel Width="280">
+				<TextBlock Text="Czytelnik lub telefon"/>
+				<TextBox Text="{Binding BorrowerOrPhoneFilter}" Watermark="np. Kowalski / 505"/>
+			</StackPanel>
+
+			<StackPanel Width="220">
+				<TextBlock Text="Termin od"/>
+				<DatePicker SelectedDate="{Binding DueFrom}"/>
+			</StackPanel>
+
+			<StackPanel Width="220">
+				<TextBlock Text="Termin do"/>
+				<DatePicker SelectedDate="{Binding DueTo}"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Bottom">
+				<Button Content="Szukaj"   Command="{Binding ApplyFiltersCommand}"/>
+				<Button Content="Wyczyść"  Command="{Binding ClearFiltersCommand}"/>
+				<Button Content="Odśwież"  Command="{Binding RefreshCommand}"/>
+			</StackPanel>
+		</WrapPanel>
+
+
+		<DataGrid Grid.Row="2"
+				  ItemsSource="{Binding FilteredRows}"
+				  AutoGenerateColumns="False"
+				  IsReadOnly="True"
+				  HeadersVisibility="All">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="ID"           Binding="{Binding Id}"            Width="70"/>
+				<DataGridTextColumn Header="Książka"      Binding="{Binding BookTitle}"     Width="260"/>
+				<DataGridTextColumn Header="Autor"        Binding="{Binding BookAuthor}"    Width="200"/>
+				<DataGridTextColumn Header="Czytelnik"    Binding="{Binding BorrowerName}"  Width="200"/>
+				<DataGridTextColumn Header="Telefon"      Binding="{Binding BorrowerPhone}" Width="160"/>
+				<DataGridTextColumn Header="Wypożyczono"  Binding="{Binding BorrowedAtStr}" Width="130"/>
+				<DataGridTextColumn Header="Termin"       Binding="{Binding DueAtStr}"      Width="130"/>
+				<DataGridTextColumn Header="Zwrócono"     Binding="{Binding ReturnedAtStr}" Width="130"/>
+				<DataGridTextColumn Header="Uwagi"        Binding="{Binding Notes}"         Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+
+	</Grid>
+</Window>

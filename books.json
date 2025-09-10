@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Title": "Pan Tadeusz",
+    "Author": "Adam Mickiewicz",
+    "Isbn": "978-83-01-00000-1",
+    "Year": 1834,
+    "Genre": "Epopeja",
+    "CopiesTotal": 3
+  },
+  {
+    "Id": 2,
+    "Title": "Lalka",
+    "Author": "Bolesław Prus",
+    "Isbn": "978-83-01-00000-2",
+    "Year": 1890,
+    "Genre": "Powieść",
+    "CopiesTotal": 2
+  },
+  {
+    "Id": 3,
+    "Title": "Quo Vadis",
+    "Author": "Henryk Sienkiewicz",
+    "Isbn": "978-83-01-00000-3",
+    "Year": 1896,
+    "Genre": "Powieść historyczna",
+    "CopiesTotal": 4
+  }
+]

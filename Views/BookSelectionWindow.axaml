@@ -1,0 +1,26 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ProKS1.ViewModels"
+        xmlns:m="using:ProKS1.Models"
+        x:Class="ProKS1.Views.BookSelectionWindow"
+        x:DataType="vm:BookSelectionViewModel"
+        Title="Wybierz Książkę"
+        Width="520" Height="380"
+        WindowStartupLocation="CenterOwner">
+  <DockPanel Margin="15">
+    <Button Content="Wybierz" Command="{Binding ConfirmSelectionCommand}"
+            DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+    <ListBox ItemsSource="{Binding Books}" SelectedItem="{Binding SelectedBook}">
+      <ListBox.ItemTemplate>
+        <DataTemplate DataType="m:Book">
+          <StackPanel>
+            <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Author}" FontStyle="Italic" FontSize="12"/>
+            <TextBlock Text="{Binding Genre}" FontSize="12"/>
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </DockPanel>
+</Window>

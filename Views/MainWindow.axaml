@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ProKS1.ViewModels"
+        x:Class="ProKS1.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Biblioteka - Zarządzanie"
+        Width="1100" Height="750">
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="_Operacje">
+				<MenuItem Header="_Dodaj wypożyczenie..." Command="{Binding OpenBookSelectionCommand}"/>
+				<MenuItem Header="_Tabela wszystkich wypożyczeń..." Command="{Binding OpenGlobalTableCommand}"/>
+				<Separator/>
+				<MenuItem Header="Zarządzaj _Książkami..." Command="{Binding OpenBookManagerCommand}"/>
+			</MenuItem>
+		</Menu>
+		<TextBlock Text="Witaj w systemie bibliotecznym! Skorzystaj z menu u góry."
+				   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"/>
+	</DockPanel>
+</Window>

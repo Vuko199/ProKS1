@@ -1,0 +1,32 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ProKS1.ViewModels"
+        x:Class="ProKS1.Views.LoanEntryWindow"
+        x:DataType="vm:LoanEntryViewModel"
+        Title="{Binding SelectedBook.Title, StringFormat='Nowe wypożyczenie: {0}'}"
+        Width="520" Height="420" WindowStartupLocation="CenterOwner">
+  <Grid Margin="15" RowDefinitions="Auto,Auto,Auto,Auto,Auto,*,Auto" ColumnDefinitions="Auto,*">
+    <TextBlock Text="Czytelnik:" VerticalAlignment="Center" Grid.Row="0" Margin="0,0,10,0"/>
+    <TextBox Text="{Binding BorrowerName}" Grid.Row="0" Grid.Column="1" Margin="0,5"/>
+
+    <TextBlock Text="Telefon:" VerticalAlignment="Center" Grid.Row="1" Margin="0,0,10,0"/>
+    <TextBox Text="{Binding BorrowerPhone}" Grid.Row="1" Grid.Column="1" Margin="0,5"/>
+
+    <TextBlock Text="Data wypożyczenia:" VerticalAlignment="Center" Grid.Row="2" Margin="0,0,10,0"/>
+    <DatePicker SelectedDate="{Binding BorrowedAt}" Grid.Row="2" Grid.Column="1" Margin="0,5"/>
+
+    <TextBlock Text="Termin zwrotu:" VerticalAlignment="Center" Grid.Row="3" Margin="0,0,10,0"/>
+    <DatePicker SelectedDate="{Binding DueAt}" Grid.Row="3" Grid.Column="1" Margin="0,5"/>
+
+    <TextBlock Text="Uwagi:" VerticalAlignment="Center" Grid.Row="4" Margin="0,0,10,0"/>
+    <TextBox Text="{Binding Notes}" AcceptsReturn="True" TextWrapping="Wrap"
+             Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" Margin="0,5"/>
+
+    <TextBlock Foreground="Red" Text="{Binding ErrorMessage}" Grid.Row="5" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" Margin="0,8,0,0"/>
+
+    <Button Content="Zapisz" Command="{Binding SaveLoanCommand}"
+            Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+  </Grid>
+</Window>
