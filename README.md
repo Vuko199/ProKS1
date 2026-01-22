@@ -46,6 +46,8 @@ System umożliwia:
 - wyświetlenie listy książek,
 - podgląd szczegółów książki.
 
+<img width="1024" height="559" alt="obraz" src="https://github.com/user-attachments/assets/8f8d90bb-ef98-4cd2-818e-f7baab0d6f09" />
+
 **Kryteria akceptacji:**
 - Po dodaniu książka pojawia się na liście.
 - Dla książki widoczne są podstawowe dane (np. tytuł, autor, identyfikator).
@@ -97,3 +99,52 @@ System zapisuje dane biblioteki lokalnie do pliku tekstowego i odczytuje je przy
 **Kryteria akceptacji:**
 - Po ponownym uruchomieniu aplikacji dane są zachowane.
 - Brak pliku danych nie powoduje awarii (system startuje z pustymi listami).
+
+## Instrukcja obsługi
+
+### Ekran główny
+Po uruchomieniu aplikacji zobaczysz panel z nawigacją do modułów:
+- **Książki**
+- **Czytelnicy**
+- **Wypożyczenia**
+- **Status książki** (podgląd czy jest wypożyczona i do kiedy)
+
+### 1) Dodawanie książki
+1. Wejdź w zakładkę **Książki**
+2. Kliknij **Dodaj książkę**
+3. Uzupełnij dane (np. tytuł, autor, rok/ID)
+4. Kliknij **Zapisz**
+5. Książka pojawi się na liście
+
+### 2) Dodawanie czytelnika
+1. Wejdź w zakładkę **Czytelnicy**
+2. Kliknij **Dodaj czytelnika**
+3. Uzupełnij dane (np. imię, nazwisko, ID/nr karty)
+4. Kliknij **Zapisz**
+5. Czytelnik pojawi się na liście
+
+### 3) Wypożyczenie książki
+1. Wejdź w zakładkę **Wypożyczenia**
+2. Kliknij **Nowe wypożyczenie**
+3. Wybierz książkę i czytelnika
+4. Ustaw **datę wypożyczenia** i **termin zwrotu** (lub ilość dni)
+5. Kliknij **Zatwierdź**
+6. Jeśli książka była już wypożyczona, aplikacja pokaże komunikat i nie pozwoli wykonać operacji
+
+### 4) Zwrot książki
+1. Wejdź w zakładkę **Wypożyczenia**
+2. Z listy aktywnych wypożyczeń wybierz rekord
+3. Kliknij **Zwróć**
+4. Książka zmieni status na „Dostępna”
+
+### 5) Sprawdzenie, czy książka jest wypożyczona i na jak długo
+1. Wejdź w **Status książki** (albo sekcję statusu w Książkach)
+2. Wybierz książkę z listy
+3. Zobaczysz:
+   - status: **Dostępna / Wypożyczona**
+   - kto wypożyczył (jeśli dotyczy)
+   - **termin zwrotu** i **czas pozostały**
+
+> Dane aplikacji są zapisywane lokalnie w pliku tekstowym. Po ponownym uruchomieniu aplikacji wpisy pozostają zachowane.
+
+
