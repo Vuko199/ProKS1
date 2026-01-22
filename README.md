@@ -137,3 +137,13 @@ Aplikacja zapisuje dane lokalnie w plikach (JSON) i pokazuje ich ścieżkę w ok
 - `loans.json` — baza wypożyczeń
 
 Po ponownym uruchomieniu `ProKS.exe` dane pozostają zachowane.
+
+
+> **Uwaga:** Pozostała dokumentacja projektowa znajduje się w katalogu `docs/`:
+> - Wymagania funkcjonalne: `docs/functional-requirements.md`
+> - Wymagania niefunkcjonalne: `docs/nonfunctional-requirements.md`
+> - Moduły systemu: `docs/modules.md`
+> - Przypadki użycia: `docs/use-cases.md`
+> - Uruchomienie i stos technologiczny: `docs/runbook.md`
+> - Struktura folderów (.NET): `docs/folder-structure.md`
+
